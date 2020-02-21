@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NineLatticeLayout">
+        <attr name="grid_count" format="integer" />
+        <attr name="space" format="integer" />
+        <attr name="single_img_size" format="dimension"/>
+    </declare-styleable>
+</resources>
