@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:text="测试一" />
 
-    <com.liusir.ninelatticeimagelayout.ui.view.ninelattice.NineLatticeImageLayout
+    <com.lz_abc.ninelatticelayout.NineLatticeImageLayout
         android:id="@+id/nlLayout"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/dimen_10dp"
         android:layout_height="match_parent"
         app:grid_count="3"
-        app:space="20"
+        app:space="10dp"
         app:single_img_size="140dp"
         />
 </LinearLayout>

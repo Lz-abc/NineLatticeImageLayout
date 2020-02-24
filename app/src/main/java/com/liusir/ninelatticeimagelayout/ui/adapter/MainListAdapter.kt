@@ -5,20 +5,20 @@ import android.widget.Toast
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.liusir.ninelatticeimagelayout.R
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.NineLatticeImageLayout
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean.BaseData
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback.NineLatticeItemChildClickListener
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback.NineLatticeItemClickListener
+import com.lz_abc.ninelatticelayout.NineLatticeImageLayout
+import com.lz_abc.ninelatticelayout.bean.BaseData
+import com.lz_abc.ninelatticelayout.callback.NineLatticeItemChildClickListener
+import com.lz_abc.ninelatticelayout.callback.NineLatticeItemClickListener
 
 class MainListAdapter(data: List<Item>) :
     BaseQuickAdapter<MainListAdapter.Item, BaseViewHolder>(R.layout.item_main, data) {
     class Item {
-        var list: List<BaseData>? = null
+        var list: List<String>? = null
     }
 
     override fun convert(helper: BaseViewHolder, item: Item?) {
         helper?.let {
-            var nlLayout: NineLatticeImageLayout<BaseData> = it.getView(R.id.nlLayout)
+            var nlLayout: NineLatticeImageLayout = it.getView(R.id.nlLayout)
             item?.list?.let { list ->
                 nlLayout.setData(list)
             }

@@ -1,4 +1,4 @@
-package com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean
+package com.lz_abc.ninelatticelayout.bean
 
 enum class DecorationState {
     GRID,//网格布局

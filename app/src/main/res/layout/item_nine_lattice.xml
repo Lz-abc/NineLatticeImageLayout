@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.abc.baseloadview.views.RoundImageView
+    <com.lz_abc.ninelatticelayout.utils.RoundImageView
         android:id="@+id/iv_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

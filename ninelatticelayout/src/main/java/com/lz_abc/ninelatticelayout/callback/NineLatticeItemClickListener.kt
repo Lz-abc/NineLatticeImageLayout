@@ -1,4 +1,4 @@
-package com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback
+package com.lz_abc.ninelatticelayout.callback
 
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter

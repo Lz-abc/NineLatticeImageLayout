@@ -1,10 +1,10 @@
-package com.liusir.ninelatticeimagelayout.ui.view.ninelattice.utils
+package com.lz_abc.ninelatticelayout.utils
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean.DecorationState
+import com.lz_abc.ninelatticelayout.bean.DecorationState
 
 class SpacesItemDecoration : RecyclerView.ItemDecoration {
 

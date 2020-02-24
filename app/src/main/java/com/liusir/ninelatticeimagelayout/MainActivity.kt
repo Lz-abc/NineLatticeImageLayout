@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.liusir.ninelatticeimagelayout.base.BaseActivity
 import com.liusir.ninelatticeimagelayout.ui.adapter.MainListAdapter
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean.BaseData
+import com.lz_abc.ninelatticelayout.bean.BaseData
+import com.lz_abc.ninelatticelayout.utils.NineLatticeLayoutConfig
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
 
@@ -22,31 +23,24 @@ class MainActivity : BaseActivity() {
         rvList.layoutManager = lm
 
         val list = ArrayList<MainListAdapter.Item>()
-
         for (i in 1..10) {
-            val itemArray = ArrayList<BaseData>()
-            var data = BaseData()
-            data.url = "http://img.tukexw.com/img/e44e2243b9ed7e38.jpg"
-            itemArray.add(data)
+            val itemArray = ArrayList<String>()
+            itemArray.add("http://img.tukexw.com/img/e44e2243b9ed7e38.jpg")
             val item1 = MainListAdapter.Item()
             item1.list = itemArray
             list.add(item1)
 
-            val itemArray2 = ArrayList<BaseData>()
+            val itemArray2 = ArrayList<String>()
             for (index in 0..2){
-                var data = BaseData()
-                data.url = "http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg"
-                itemArray2.add(data)
+                itemArray2.add("http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg")
             }
             val item2 = MainListAdapter.Item()
             item2.list = itemArray2
             list.add(item2)
 
-            val itemArray3 = ArrayList<BaseData>()
+            val itemArray3 = ArrayList<String>()
             for (index in 0..8){
-                var data = BaseData()
-                data.url = "http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg"
-                itemArray3.add(data)
+                itemArray3.add("http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg")
             }
             val item3 = MainListAdapter.Item()
             item3.list = itemArray3

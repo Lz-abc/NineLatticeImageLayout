@@ -1,4 +1,4 @@
-package com.liusir.ninelatticeimagelayout.ui.view.ninelattice
+package com.lz_abc.ninelatticelayout
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,22 +6,22 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.liusir.ninelatticeimagelayout.R
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.adapter.ItemAdapter
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean.BaseData
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.bean.DecorationState
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback.ImageCallback
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback.NineLatticeItemChildClickListener
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.callback.NineLatticeItemClickListener
-import com.liusir.ninelatticeimagelayout.ui.view.ninelattice.utils.SpacesItemDecoration
+import com.lz_abc.ninelatticelayout.adapter.ItemAdapter
+import com.lz_abc.ninelatticelayout.bean.BaseData
+import com.lz_abc.ninelatticelayout.bean.DecorationState
+import com.lz_abc.ninelatticelayout.callback.ImageCallback
+import com.lz_abc.ninelatticelayout.callback.NineLatticeItemChildClickListener
+import com.lz_abc.ninelatticelayout.callback.NineLatticeItemClickListener
+import com.lz_abc.ninelatticelayout.utils.NineLatticeLayoutConfig
+import com.lz_abc.ninelatticelayout.utils.SpacesItemDecoration
 
-class NineLatticeImageLayout<T : BaseData> : RecyclerView {
+class NineLatticeImageLayout : RecyclerView {
     private var spanCount: Int = 1//网格列数
     private var space: Int = 10//间隔大小
     private var decorationState = DecorationState.GRID//间隔模式 默认网格
     private var singleImgSize: Int = 0//单张图片大小
     private var gridSize: Int = 0//网格图片大小
-    private var data: List<T>? = null//图片列表
+    private var data: List<String>? = null//图片列表
 
     constructor(context: Context) : this(context, null)
 
@@ -31,9 +31,10 @@ class NineLatticeImageLayout<T : BaseData> : RecyclerView {
         val attr = context.obtainStyledAttributes(attrs!!, R.styleable.NineLatticeLayout, def, 0)
         attr.let {
             spanCount = attr.getInt(R.styleable.NineLatticeLayout_grid_count, spanCount)
-            space = attr.getInt(R.styleable.NineLatticeLayout_space, space)
+            space = attr.getDimensionPixelSize(R.styleable.NineLatticeLayout_space, space)
             singleImgSize=attr.getDimensionPixelSize(R.styleable.NineLatticeLayout_single_img_size,0)
         }
+        NineLatticeLayoutConfig.init(context)
         init()
     }
 
@@ -74,7 +75,7 @@ class NineLatticeImageLayout<T : BaseData> : RecyclerView {
     /**
      * 设置数据 用于计算调整宽高
      */
-    fun setData(data: List<T>) {
+    fun setData(data: List<String>) {
         this.data = data
         layoutManager = if (data.size == 1) {
             GridLayoutManager(context,1)
@@ -97,12 +98,12 @@ class NineLatticeImageLayout<T : BaseData> : RecyclerView {
         }
     }
 
-    private val itemAdapter: ItemAdapter<T> by lazy {
+    private val itemAdapter: ItemAdapter<String> by lazy {
         ItemAdapter(listOf(),
-            object : ImageCallback<T> {
-                override fun loadImage(data: T?, image: ImageView) {
+            object : ImageCallback<String> {
+                override fun loadImage(data: String?, image: ImageView) {
                     data?.let {
-                        Glide.with(context).load(data.url).into(image)
+                        Glide.with(context).load(data).into(image)
                     }
                 }
             })

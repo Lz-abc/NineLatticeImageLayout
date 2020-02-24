@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NineLatticeLayout">
+        <attr name="grid_count" format="integer" />
+        <attr name="space" format="dimension" />
+        <attr name="single_img_size" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundImageView">
+        <!--圆形图片和带有圆角的图片-->
+        <attr name="borderRadius" format="dimension" />
+        <attr name="lltype">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>
