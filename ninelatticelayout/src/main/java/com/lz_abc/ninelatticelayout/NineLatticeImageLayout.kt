@@ -65,7 +65,7 @@ class NineLatticeImageLayout : RecyclerView {
                 gridSize = if (it.size == 1) {
                     if (singleImgSize > totalWidth) totalWidth else singleImgSize
                 } else {
-                    (totalWidth - ((spanCount - 2) * space)) / spanCount
+                    (totalWidth - ((spanCount - 1) * space)) / spanCount
                 }
                 itemAdapter.setHeight(gridSize)
                 itemAdapter.notifyDataSetChanged()

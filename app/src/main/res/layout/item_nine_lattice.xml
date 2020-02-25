@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
-        app:borderRadius="8dp"
+        app:borderRadius="4dp"
         app:lltype="round"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

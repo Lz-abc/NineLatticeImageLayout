@@ -21,18 +21,19 @@ class MainActivity : BaseActivity() {
         var lm = LinearLayoutManager(this)
         lm.orientation = VERTICAL
         rvList.layoutManager = lm
-
+var url="http://d.ifengimg.com/w600/p0.ifengimg.com/pmop/2018/0829/81A01549F726A277DC480C8916232811ADB45D1B_size150_w1080_h2160.jpeg"
+//       var url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582633416778&di=77af8497bad7da8761546bfb3517e2b0&imgtype=0&src=http%3A%2F%2Fimg.ewebweb.com%2Fuploads%2F20190403%2F15%2F1554275984-CghfBeMolO.jpg"
         val list = ArrayList<MainListAdapter.Item>()
         for (i in 1..10) {
             val itemArray = ArrayList<String>()
-            itemArray.add("http://img.tukexw.com/img/e44e2243b9ed7e38.jpg")
+            itemArray.add(url)
             val item1 = MainListAdapter.Item()
             item1.list = itemArray
             list.add(item1)
 
             val itemArray2 = ArrayList<String>()
             for (index in 0..2){
-                itemArray2.add("http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg")
+                itemArray2.add(url)
             }
             val item2 = MainListAdapter.Item()
             item2.list = itemArray2
@@ -40,7 +41,7 @@ class MainActivity : BaseActivity() {
 
             val itemArray3 = ArrayList<String>()
             for (index in 0..8){
-                itemArray3.add("http://img0.imgtn.bdimg.com/it/u=137229390,2698864614&fm=26&gp=0.jpg")
+                itemArray3.add(url)
             }
             val item3 = MainListAdapter.Item()
             item3.list = itemArray3
