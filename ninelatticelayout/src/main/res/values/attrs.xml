@@ -4,6 +4,9 @@
         <attr name="grid_count" format="integer" />
         <attr name="space" format="dimension" />
         <attr name="single_img_size" format="dimension"/>
+        <attr name="error_drawable" format="reference"/>
+        <attr name="default_drawable" format="reference"/>
+        <attr name="blank_drawable" format="reference"/>
     </declare-styleable>
 
 

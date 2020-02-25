@@ -1,2 +1,2 @@
-include ':app', ':ninelatticelayout'
+include ':app',':ninelatticelayout'
 rootProject.name='NineLatticeImageLayout'

@@ -87,20 +87,20 @@ class SpacesItemDecoration : RecyclerView.ItemDecoration {
 
                     //处理两端设置的间距问题
                     if (m == sc - 1) {
-                        outRect.right = lrs
-
+//                        outRect.right = lrs
+//                        outRect.right = 0
                     }
 
                     if (m == 0) {
-                        outRect.left = lrs
+//                        outRect.left = lrs
+                        outRect.left = 0
                     }
 
 
-                    if (v == 0) {
+                    if (v != 0) {
                         outRect.top = space
                     }
-
-                    outRect.bottom = space
+//                    outRect.bottom = space
                 }
             }
         }

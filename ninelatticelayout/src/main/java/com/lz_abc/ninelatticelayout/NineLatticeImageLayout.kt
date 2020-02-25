@@ -22,7 +22,9 @@ class NineLatticeImageLayout : RecyclerView {
     private var singleImgSize: Int = 0//单张图片大小
     private var gridSize: Int = 0//网格图片大小
     private var data: List<String>? = null//图片列表
-
+    private var defaultDarw:Int=0//默认图片
+    private var errorDraw:Int=0//错误图片
+    private var blankDraw:Int=0//空图片
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, -1)
@@ -33,6 +35,9 @@ class NineLatticeImageLayout : RecyclerView {
             spanCount = attr.getInt(R.styleable.NineLatticeLayout_grid_count, spanCount)
             space = attr.getDimensionPixelSize(R.styleable.NineLatticeLayout_space, space)
             singleImgSize=attr.getDimensionPixelSize(R.styleable.NineLatticeLayout_single_img_size,0)
+            defaultDarw=attr.getResourceId(R.styleable.NineLatticeLayout_default_drawable,0)
+            errorDraw=attr.getResourceId(R.styleable.NineLatticeLayout_error_drawable,0)
+            blankDraw=attr.getResourceId(R.styleable.NineLatticeLayout_blank_drawable,0)
         }
         NineLatticeLayoutConfig.init(context)
         init()
@@ -60,12 +65,12 @@ class NineLatticeImageLayout : RecyclerView {
                 gridSize = if (it.size == 1) {
                     if (singleImgSize > totalWidth) totalWidth else singleImgSize
                 } else {
-                    (totalWidth - ((spanCount - 1) * space)) / spanCount
+                    (totalWidth - ((spanCount - 2) * space)) / spanCount
                 }
                 itemAdapter.setHeight(gridSize)
                 itemAdapter.notifyDataSetChanged()
                 val rowCount=(it.size / spanCount + if (it.size % spanCount > 0) 1 else 0)
-                val w=(rowCount+1)*space
+                val w=(rowCount-1)*space
                 height = (gridSize * rowCount)+ (w + paddingTop + paddingBottom)
             }
         }
@@ -103,7 +108,11 @@ class NineLatticeImageLayout : RecyclerView {
             object : ImageCallback<String> {
                 override fun loadImage(data: String?, image: ImageView) {
                     data?.let {
-                        Glide.with(context).load(data).into(image)
+                        Glide.with(context).load(data)
+                            .error(errorDraw)//加载错误
+                            .placeholder(defaultDarw)//默认
+                            .fallback(blankDraw)//路径为空
+                            .into(image)
                     }
                 }
             })
