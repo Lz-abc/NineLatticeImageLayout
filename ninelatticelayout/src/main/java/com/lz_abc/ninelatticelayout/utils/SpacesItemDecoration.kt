@@ -73,28 +73,28 @@ class SpacesItemDecoration : RecyclerView.ItemDecoration {
                         outRect.left = (((m) * 1.0f * dh / sc).toInt())
                     }
 
-                    //处理两端间距分配给每个item问题
-                    if (m != sc - 1) {
-                        //y = 2x - (sc - 2)
-                        outRect.right += ((2 * m - (sc - 2)) * 1.0f * lrs / sc).toInt()
-                    }
-
-                    if (m != 0) {
-                        //y = -2x + sc
-                        outRect.left += ((-2 * m + sc) * 1.0f * lrs / sc).toInt()
-                    }
+//                    //处理两端间距分配给每个item问题
+//                    if (m != sc - 1) {
+//                        //y = 2x - (sc - 2)
+//                        outRect.right += ((2 * m - (sc - 2)) * 1.0f * lrs / sc).toInt()
+//                    }
+//
+//                    if (m != 0) {
+//                        //y = -2x + sc
+//                        outRect.left += ((-2 * m + sc) * 1.0f * lrs / sc).toInt()
+//                    }
 
 
                     //处理两端设置的间距问题
-                    if (m == sc - 1) {
-//                        outRect.right = lrs
-//                        outRect.right = 0
-                    }
-
-                    if (m == 0) {
-//                        outRect.left = lrs
-                        outRect.left = 0
-                    }
+//                    if (m == sc - 1) {
+////                        outRect.right = lrs
+////                        outRect.right = 0
+//                    }
+//
+//                    if (m == 0) {
+////                        outRect.left = lrs
+//                        outRect.left = 0
+//                    }
 
 
                     if (v != 0) {

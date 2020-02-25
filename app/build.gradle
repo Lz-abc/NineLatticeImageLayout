@@ -36,5 +36,5 @@ dependencies {
 
     //基础框架
     implementation 'com.github.Lz-abc:Simple-baseloadview:1.0.1'
-//    implementation 'com.github.Lz-abc:NineLatticeImageLayout:1.0'
+//    implementation 'com.github.Lz-abc:NineLatticeImageLayout:1.0.1'
 }
